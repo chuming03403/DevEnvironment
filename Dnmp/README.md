@@ -1,4 +1,4 @@
-**sDNMP项目在yeszao/dnmp（https://github.com/yeszao/dnmp.git）基础上做的修改而来**
+**sDNMP项目在yeszao/dnmp（https://github.com/yeszao/dnmp.git ）基础上做的修改而来**
 DNMP（Docker + Nginx + MySQL + PHP7/5 + Redis）是一款全功能的**LNMP一键安装程序**。
 
 **QQ群：** 572041090  （请备注dnmp交流）
