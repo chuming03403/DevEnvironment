@@ -12,6 +12,7 @@ services:
       - ${NGINX_LOG_DIR}:/var/log/nginx/:rw
       - ${LOCALTIME_DIR}:/etc/localtime:ro
       - ${TIMEZONE_DIR}:/etc/timezone:ro
+      - ${AUTH_PROXY_PASS}:/etc/htpasswd/psd.users:rw
     restart: always
     networks:
       - default
