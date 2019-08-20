@@ -161,14 +161,17 @@ services:
       - default
 
   elasticsearch:
-    image: elasticsearch:${ELASTICSEARCH_VERSION}
+    build: 
+      context: ./dockerfiles/elasticsearch
+      args:
+        ELASTICSEARCH_VERSION: ${ELASTICSEARCH_VERSION}
     container_name: elasticsearch${ELASTICSEARCH_VERSION}
     environment:
       - discovery.type=single-node
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
     volumes:
       - ${ELASTICSEARCH_DATA_DIR}:/usr/share/elasticsearch/data
-      - ${ELASTICSEARCH_PLUGIN_IK}:/usr/share/elasticsearch/plugins/:rw
+      - ${ELASTICSEARCH_LOG_DIR}:/usr/share/elasticsearch/logs/:rw
       - ${LOCALTIME_DIR}:/etc/localtime:ro
       - ${TIMEZONE_DIR}:/etc/timezone:ro
     hostname: elasticsearch

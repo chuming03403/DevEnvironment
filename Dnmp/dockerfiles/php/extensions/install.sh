@@ -20,7 +20,7 @@ if [ "${PHP_EXTENSIONS}" != "" ]; then
     echo "---------- Install general dependencies ----------" 
 	apk update
 	apk --no-cache add bash autoconf g++ libtool make curl curl-dev libcurl gnutls-dev libgcrypt-dev libxml2 libxml2-dev libxslt-dev git \
-	linux-headers --repository http://dl-3.alpinelinux.org/alpine/edge/testing gnu-libiconv
+	linux-headers gnu-libiconv --repository http://dl-3.alpinelinux.org/alpine/edge/testing
 fi
 
 if [ -z "${EXTENSIONS##*,pdo_mysql,*}" ]; then
